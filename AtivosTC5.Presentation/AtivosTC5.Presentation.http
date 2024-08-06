@@ -1,0 +1,6 @@
+@AtivosTC5.Presentation_HostAddress = http://localhost:5012
+
+GET {{AtivosTC5.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
