@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtivosTC5.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d75f2486c8921b6e505dc6919d878eef6a9f77f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtivosTC5.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtivosTC5.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
