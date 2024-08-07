@@ -15,5 +15,8 @@ namespace AtivosTC5.Domain.Entities
         public decimal Preco { get; set; }
         public DateTime DataTransacao { get; set; }
 
+        public Portfolio? portfolio { get; set; }
+        public Ativo? ativo { get; set; }
+
     }
 }

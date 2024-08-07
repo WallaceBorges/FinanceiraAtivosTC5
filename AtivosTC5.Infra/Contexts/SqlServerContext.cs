@@ -1,5 +1,5 @@
 ﻿using AtivosTC5.Domain.Entities;
-using AtivosTC5.Infra.Mappings;
+using AtivosTC5.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtivosTC5.Infra.Contexts
+namespace AtivosTC5.Infra.Data.Contexts
 {
     public class SqlServerContext:DbContext
     {
@@ -18,7 +18,7 @@ namespace AtivosTC5.Infra.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=SQL5063.site4now.net;Initial Catalog=db_a92354_apiprodutos;User Id=db_a92354_apiprodutos_admin;Password=coti123456");
+                optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AtivosTC5;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
             }
         }
 
@@ -40,7 +40,7 @@ namespace AtivosTC5.Infra.Contexts
         /// </summary>
         public DbSet<Ativo> Ativo { get; set; }
         public DbSet<AtivoTipo> AtivoTipo { get; set; }
-        public DbSet<Portifolio> Portifolio { get; set; }
+        public DbSet<Portfolio> Portifolio { get; set; }
         public DbSet<Transacao> Transacao { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
 

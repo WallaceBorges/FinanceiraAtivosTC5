@@ -7,13 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtivosTC5.Infra.Mappings
+namespace AtivosTC5.Infra.Data.Mappings
 {
     public class AtivoMap : IEntityTypeConfiguration<Ativo>
     {
         public void Configure(EntityTypeBuilder<Ativo> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(x => x.Id);
+            builder.Property(u => u.Nome)
+                 .HasMaxLength(150)
+                 .IsRequired();
+
+
+
         }
     }
 }

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtivosTC5.Domain.Entities
+namespace AtivosTC5.Application.Services
 {
-    public class AtivoTipo:EntityBase
+    public class TransacaoAppService
     {
-        public IList<Ativo>? ativos { get; set; }
-
     }
 }

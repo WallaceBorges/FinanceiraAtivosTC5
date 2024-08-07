@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
@@ -12,12 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AtivosTC5.Application\AtivosTC5.Application.csproj" />
     <ProjectReference Include="..\AtivosTC5.Domain\AtivosTC5.Domain.csproj" />
+    <ProjectReference Include="..\AtivosTC5.Infra.Authentication\AtivosTC5.Infra.Authentication.csproj" />
     <ProjectReference Include="..\AtivosTC5.Infra\AtivosTC5.Infra.Data.csproj" />
   </ItemGroup>
 

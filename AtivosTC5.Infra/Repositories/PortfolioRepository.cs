@@ -6,16 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtivosTC5.Infra.Repositories
+namespace AtivosTC5.Infra.Data.Repositories
 {
-    public class PortifolioRepository : IPortifolioRepository
+    public class PortfolioRepository : IPortifolioRepository
     {
-        public void Alterar(Portifolio entidade)
+        public void Alterar(Portfolio entidade)
         {
             throw new NotImplementedException();
         }
 
-        public void Cadastrar(Portifolio entidade)
+        public void Cadastrar(Portfolio entidade)
         {
             throw new NotImplementedException();
         }
@@ -25,17 +25,17 @@ namespace AtivosTC5.Infra.Repositories
             throw new NotImplementedException();
         }
 
-        public Portifolio ObterPorId(int id)
+        public Portfolio ObterPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IList<Portifolio> ObterTodos()
+        public IList<Portfolio> ObterTodos()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IList<Portifolio>> ObterTodosAsync()
+        public Task<IList<Portfolio>> ObterTodosAsync()
         {
             throw new NotImplementedException();
         }

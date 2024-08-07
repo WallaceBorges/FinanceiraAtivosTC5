@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtivosTC5.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaf1b90a05ce54ba0a88c5d6496c951989987775")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59e17f83350bafcce96492a1dc6e517dd9fe12f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtivosTC5.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtivosTC5.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

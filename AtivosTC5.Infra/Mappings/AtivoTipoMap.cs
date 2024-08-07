@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtivosTC5.Infra.Mappings
+namespace AtivosTC5.Infra.Data.Mappings
 {
     public class AtivoTipoMap : IEntityTypeConfiguration<AtivoTipo>
     {

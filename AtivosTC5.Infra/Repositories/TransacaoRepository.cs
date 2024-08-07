@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtivosTC5.Infra.Repositories
+namespace AtivosTC5.Infra.Data.Repositories
 {
     public class TransacaoRepository : ITransacaoRepository
     {

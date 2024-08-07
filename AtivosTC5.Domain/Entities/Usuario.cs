@@ -11,5 +11,7 @@ namespace AtivosTC5.Domain.Entities
         public string Email { get; set; }
         public string Senha { get; set; }
 
+        public Portfolio? portfolio { get; set; }
+
     }
 }
