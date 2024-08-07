@@ -4116,6 +4116,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AtivosTC5.Domain >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 8.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.7"
@@ -4128,9 +4129,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Infra\\AtivosTC5.Infra.csproj",
-      "projectName": "AtivosTC5.Infra",
-      "projectPath": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Infra\\AtivosTC5.Infra.csproj",
+      "projectUniqueName": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Infra\\AtivosTC5.Infra.Data.csproj",
+      "projectName": "AtivosTC5.Infra.Data",
+      "projectPath": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Infra\\AtivosTC5.Infra.Data.csproj",
       "packagesPath": "C:\\Users\\Wallace\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Infra\\obj\\",
       "projectStyle": "PackageReference",
@@ -4175,6 +4176,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.7, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",

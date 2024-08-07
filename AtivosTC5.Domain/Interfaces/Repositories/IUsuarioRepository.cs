@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Interfaces.Repositories
 {
-    public interface IUsuarioDomainService : IRepositoryBase<Usuario>
+    public interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
     }
 }

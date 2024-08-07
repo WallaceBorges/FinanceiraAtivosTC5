@@ -16,4 +16,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AtivosTC5.Domain\AtivosTC5.Domain.csproj" />
+    <ProjectReference Include="..\AtivosTC5.Infra\AtivosTC5.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>

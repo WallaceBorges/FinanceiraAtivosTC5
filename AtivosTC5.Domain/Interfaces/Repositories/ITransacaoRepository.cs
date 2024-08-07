@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Interfaces.Repositories
 {
-    public interface ITransacaoDomainService : IRepositoryBase<Transacao>
+    public interface ITransacaoRepository : IRepositoryBase<Transacao>
     {
     }
 }

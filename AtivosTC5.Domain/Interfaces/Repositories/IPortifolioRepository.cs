@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Interfaces.Repositories
 {
-    public interface IPortifolioDomainService : IRepositoryBase<Portifolio>
+    public interface IPortifolioRepository : IRepositoryBase<Portifolio>
     {
     }
 }
