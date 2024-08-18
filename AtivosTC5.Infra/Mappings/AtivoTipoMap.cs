@@ -13,7 +13,29 @@ namespace AtivosTC5.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<AtivoTipo> builder)
         {
-            throw new NotImplementedException();
+            builder.ToTable("ATIVOTIPO");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
+            builder.Property(u => u.Nome)
+                .HasMaxLength(150)
+                .IsRequired();
+
+            #region Colunas
+            builder.Property(p => p.Nome)
+                .HasColumnName("NOME")
+                .HasColumnType("varchar(100)")
+                .IsRequired();
+
+
+            builder.HasData(
+                 new AtivoTipo { Id = 1, Nome = "Ação" },
+                 new AtivoTipo { Id = 2, Nome = "Cripto Moeda" },
+                 new AtivoTipo { Id = 3, Nome = "Dinheiro" },
+                 new AtivoTipo { Id = 4, Nome = "Titulo" }
+                );
+            #endregion
         }
     }
 }

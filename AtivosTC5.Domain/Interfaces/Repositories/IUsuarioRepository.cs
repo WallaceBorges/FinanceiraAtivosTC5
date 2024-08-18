@@ -9,5 +9,7 @@ namespace AtivosTC5.Domain.Interfaces.Repositories
 {
     public interface IUsuarioRepository : IRepositoryBase<Usuario>
     {
+        Usuario ObterPorEmailESenha(string email, string senha);
+        Usuario ObterPorEmail(string email);
     }
 }

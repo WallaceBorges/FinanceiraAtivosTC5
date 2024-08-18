@@ -1,5 +1,6 @@
 ﻿using AtivosTC5.Domain.Entities;
 using AtivosTC5.Domain.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,36 +9,19 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Infra.Data.Repositories
 {
-    public class AtivoRepository : IAtivoRepository
+    public class AtivoRepository : RepositoryBase<Ativo>, IAtivoRepository
     {
-        public void Alterar(Ativo entidade)
+        public override async Task<IList<Ativo>> ObterTodosAsync()
         {
-            throw new NotImplementedException();
+            var Ativos = await _context.Ativo.AsQueryable().Select(x => new Ativo
+            {
+               Id= x.Id,
+                Sigla=x.Sigla,
+                Nome=x.Nome,
+                ativoTipo=x.ativoTipo
+            }).ToListAsync();
+            return Ativos;
         }
 
-        public void Cadastrar(Ativo entidade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Ativo ObterPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<Ativo> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<Ativo>> ObterTodosAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

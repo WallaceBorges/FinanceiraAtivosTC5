@@ -31,11 +31,12 @@ namespace AtivosTC5.Services.Extensions
                         IssuerSigningKey = new SymmetricSecurityKey
                             (Encoding.ASCII.GetBytes(JwtSettings.SecretKey)),
                         ValidateIssuer = false,
-                        ValidateAudience = false
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
                     };
                 }
                 );
-
+           
             services.AddTransient<IUsuarioAuthentication, UsuarioAuthentication>();
             return services;
         }

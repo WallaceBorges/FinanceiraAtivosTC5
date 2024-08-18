@@ -1,5 +1,6 @@
 ﻿using AtivosTC5.Domain.Entities;
 using AtivosTC5.Domain.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,36 +9,37 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Infra.Data.Repositories
 {
-    public class PortfolioRepository : IPortifolioRepository
+    public class PortfolioRepository : RepositoryBase<Portfolio>, IPortfolioRepository
     {
-        public void Alterar(Portfolio entidade)
+        public async Task<IList<Portfolio>> ObterPorIdUsuario(int idUser)
         {
-            throw new NotImplementedException();
+            var portfolio = await _context.Portifolio
+                                       .Where(x => x.Usuario_Id == idUser)
+                                       .Select(x => new Portfolio
+                                       {
+                                           Id = x.Id,
+                                           Descricao = x.Descricao,
+                                           Nome = x.Nome,
+                                           Usuario_Id = x.Usuario_Id,
+                                           portfolioAtivos = x.portfolioAtivos
+                                       }).ToListAsync();
+            return portfolio;
+
         }
 
-        public void Cadastrar(Portfolio entidade)
+        async Task<Portfolio> IPortfolioRepository.ObterPorId(int portfolioId)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Portfolio ObterPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<Portfolio> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<Portfolio>> ObterTodosAsync()
-        {
-            throw new NotImplementedException();
+            var portfolio = await _context.Portifolio
+                                        .Where(x => x.Id == portfolioId)
+                                        .Select(x => new Portfolio
+                                        {
+                                            Id=x.Id,
+                                            Descricao = x.Descricao,
+                                            Nome = x.Nome,
+                                            Usuario_Id = x.Usuario_Id,
+                                            portfolioAtivos = x.portfolioAtivos
+                                        }).FirstOrDefaultAsync();
+            return portfolio;
         }
     }
 }

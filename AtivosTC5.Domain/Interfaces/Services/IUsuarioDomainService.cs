@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Interfaces.Services
 {
-    public interface IUsuarioDomainService : IDomainServiceBase<UsuarioDomainService>
+    public interface IUsuarioDomainService 
     {
+        Usuario Autenticar(string email, string senha);
+        void CriarConta(Usuario usuario);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AtivosTC5.Domain.Entities;
 using AtivosTC5.Domain.Interfaces.Repositories;
+using AtivosTC5.Infra.Data.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,36 +9,30 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Infra.Data.Repositories
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UsuarioRepository : RepositoryBase<Usuario>, IUsuarioRepository
     {
-        public void Alterar(Usuario entidade)
+        public Usuario ObterPorEmail(string email)
         {
-            throw new NotImplementedException();
+            using (var context = new SqlServerContext())
+            {
+                return context.Usuario
+                     .FirstOrDefault(u => u.Email.Equals(email));
+            }
         }
 
-        public void Cadastrar(Usuario entidade)
+        public Usuario ObterPorEmailESenha(string email, string senha)
         {
-            throw new NotImplementedException();
-        }
+            using (var context = new SqlServerContext())
+            {
 
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
+#pragma warning disable CS8603 // Possible null reference return.
+                return context.Usuario
+                    .FirstOrDefault(u => u.Email.Equals(email)
+                                      && u.Senha.Equals(senha));
+#pragma warning restore CS8603 // Possible null reference return.
 
-        public Usuario ObterPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
 
-        public IList<Usuario> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<Usuario>> ObterTodosAsync()
-        {
-            throw new NotImplementedException();
+            }
         }
     }
 }

@@ -8,36 +8,8 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Infra.Data.Repositories
 {
-    public class TransacaoRepository : ITransacaoRepository
+    public class TransacaoRepository : RepositoryBase<Transacao>, ITransacaoRepository
     {
-        public void Alterar(Transacao entidade)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Cadastrar(Transacao entidade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Transacao ObterPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<Transacao> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<Transacao>> ObterTodosAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

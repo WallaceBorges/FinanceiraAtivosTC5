@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AtivosTC5.Domain\AtivosTC5.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

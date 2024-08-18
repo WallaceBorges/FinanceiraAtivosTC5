@@ -1,4 +1,5 @@
 ﻿using AtivosTC5.Domain.Entities;
+using AtivosTC5.Domain.ValueObjects;
 using AtivosTC5.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,18 +10,23 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Infra.Data.Contexts
 {
-    public class SqlServerContext:DbContext
+    public partial class SqlServerContext : DbContext
     {
+        public SqlServerContext():base()
+        {
+        }
+
+        public SqlServerContext(DbContextOptions<SqlServerContext> options) : base(options)
+        {
+
+        }
+
         /// <summary>
         /// Método para definir o caminho do banco de dados (ConnectionString)
         /// </summary>
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AtivosTC5;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
-            }
-        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+            => options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=AtivosTC5");
 
         /// <summary>
         /// Método para adicionar as classes de mapeamento do projeto
@@ -28,21 +34,17 @@ namespace AtivosTC5.Infra.Data.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SqlServerContext).Assembly);
-            //modelBuilder.ApplyConfiguration(new AtivoMap());
-            //modelBuilder.ApplyConfiguration(new AtivoTipoMap());
-            //modelBuilder.ApplyConfiguration(new PortifolioMap());
-            //modelBuilder.ApplyConfiguration(new TransacaoMap());
-            //modelBuilder.ApplyConfiguration(new UsuarioMap());
         }
 
         /// <summary>
         /// Provedor de métodos para o repositorio (CRUD)
         /// </summary>
-        public DbSet<Ativo> Ativo { get; set; }
-        public DbSet<AtivoTipo> AtivoTipo { get; set; }
-        public DbSet<Portfolio> Portifolio { get; set; }
-        public DbSet<Transacao> Transacao { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Ativo> Ativo { get; set; }
+        public virtual DbSet<AtivoTipo> AtivoTipo { get; set; }
+        public virtual DbSet<Portfolio> Portifolio { get; set; }
+        public virtual DbSet<PortfolioAtivo> PortfolioAtivos { get; set; }
+        public virtual DbSet<Transacao> Transacao { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
 
     }
 }

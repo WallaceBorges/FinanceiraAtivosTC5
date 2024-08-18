@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Interfaces.Services
 {
-    public interface IPortifolioDomainService : IDomainServiceBase<PortifolioDomainService>
+    public interface IPortfolioDomainService 
     {
+        Task<Portfolio> ObterPorid(int id);
+        Task<IList<Portfolio>> ObterPoridUsuario(int id);
+        Task<string> GravaPortfolio(Portfolio portfolio);
     }
 }

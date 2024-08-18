@@ -5,20 +5,16 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AtivosTC5.Application\AtivosTC5.Application.csproj" />
-    <ProjectReference Include="..\AtivosTC5.Domain\AtivosTC5.Domain.csproj" />
     <ProjectReference Include="..\AtivosTC5.Infra.Authentication\AtivosTC5.Infra.Authentication.csproj" />
     <ProjectReference Include="..\AtivosTC5.Infra\AtivosTC5.Infra.Data.csproj" />
   </ItemGroup>

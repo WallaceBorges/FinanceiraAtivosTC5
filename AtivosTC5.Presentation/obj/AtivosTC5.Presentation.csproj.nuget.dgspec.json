@@ -32,7 +32,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Domain\\AtivosTC5.Domain.csproj": {
+                "projectPath": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Domain\\AtivosTC5.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -332,9 +336,6 @@
               "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Application\\AtivosTC5.Application.csproj": {
                 "projectPath": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Application\\AtivosTC5.Application.csproj"
               },
-              "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Domain\\AtivosTC5.Domain.csproj": {
-                "projectPath": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Domain\\AtivosTC5.Domain.csproj"
-              },
               "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Infra.Authentication\\AtivosTC5.Infra.Authentication.csproj": {
                 "projectPath": "C:\\Users\\Wallace\\Documents\\Projetos\\AtivosTC5\\AtivosTC5.Infra.Authentication\\AtivosTC5.Infra.Authentication.csproj"
               },
@@ -359,6 +360,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"

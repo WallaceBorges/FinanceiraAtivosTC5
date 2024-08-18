@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtivosTC5.Domain.Interfaces.Services
+namespace AtivosTC5.Domain.Interfaces.UseCases.Usuarios
 {
-    public interface IDomainServiceBase<T> 
+    public interface IRetornaUsuario
     {
+        Usuario ObterPorId(int id);
     }
 }

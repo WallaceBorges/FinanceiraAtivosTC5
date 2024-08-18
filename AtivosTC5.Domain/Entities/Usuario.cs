@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Entities
 {
-    public class Usuario:EntityBase
+    public class Usuario : EntityBase
     {
         public string Email { get; set; }
         public string Senha { get; set; }
+        public string? AccessToken { get; set; }
 
-        public Portfolio? portfolio { get; set; }
+        public IList<Portfolio>? portfolios { get; set; }
 
     }
 }

@@ -27,7 +27,11 @@ namespace AtivosTC5.Infra.Authentication.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 //nome do usuário autenticado (usaremos o email)
-                Subject = new ClaimsIdentity(new Claim[] { new Claim(ClaimTypes.Name, usuario.Email) }),
+                Subject = new ClaimsIdentity(new Claim[]
+                { 
+                    new Claim(ClaimTypes.Name, usuario.Email)
+                   ,new Claim("Id", usuario.Id.ToString()) 
+                }),
                 //definindo a data de expiração do token
                 Expires = DateTime.Now.AddHours(JwtSettings.ExpirationInHours),
                 //assinando o token (chave antifalsificação)

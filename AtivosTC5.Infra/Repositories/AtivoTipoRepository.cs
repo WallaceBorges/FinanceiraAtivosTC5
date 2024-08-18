@@ -8,36 +8,7 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Infra.Data.Repositories
 {
-    public class AtivoTipoRepository : IAtivoTipoRepository
+    public class AtivoTipoRepository : RepositoryBase<AtivoTipo>, IAtivoTipoRepository
     {
-        public void Alterar(AtivoTipo entidade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Cadastrar(AtivoTipo entidade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Deletar(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public AtivoTipo ObterPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<AtivoTipo> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IList<AtivoTipo>> ObterTodosAsync()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Interfaces.Services
 {
-    public interface ITransacaoDomainService  : IDomainServiceBase<TransacaoDomainService>
+    public interface ITransacaoDomainService 
     {
     }
 }

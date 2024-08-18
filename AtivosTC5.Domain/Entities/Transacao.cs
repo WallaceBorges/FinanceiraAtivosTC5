@@ -10,11 +10,11 @@ namespace AtivosTC5.Domain.Entities
     {
         public int Portifolio_Id { get; set; }
         public int Ativo_Id { get; set; }
-        public string TipoTransacao { get; set; }
+        public int TipoTransacao { get; set; }
         public decimal  Quantidade { get; set; }
         public decimal Preco { get; set; }
         public DateTime DataTransacao { get; set; }
-
+        
         public Portfolio? portfolio { get; set; }
         public Ativo? ativo { get; set; }
 

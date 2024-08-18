@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Interfaces.Services
 {
-    public interface IAtivoTipoDomainService : IDomainServiceBase<AtivoTipoDomainService>
+    public interface IAtivoTipoDomainService 
     {
     }
 }

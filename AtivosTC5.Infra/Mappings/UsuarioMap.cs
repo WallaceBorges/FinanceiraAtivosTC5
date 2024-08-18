@@ -13,7 +13,25 @@ namespace AtivosTC5.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            throw new NotImplementedException();
+            builder.ToTable("USUARIO");
+
+            builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.Id)
+             .ValueGeneratedOnAdd();
+
+            builder.Ignore(x => x.AccessToken);
+                
+            #region Colunas
+            builder.Property(p => p.Nome)
+                .HasColumnName("NOME")
+                .HasColumnType("varchar(300)")
+                .IsRequired();
+            builder.Property(p => p.Email)
+                .HasColumnName("email")
+                .HasColumnType("varchar(200)")
+                .IsRequired();
+            #endregion
         }
     }
 }
