@@ -15,7 +15,7 @@ namespace AtivosTC5.Infra.Data.Repositories
         {
             var Ativos = await _context.Ativo.AsQueryable().Select(x => new Ativo
             {
-               Id= x.Id,
+                Id= x.Id,
                 Sigla=x.Sigla,
                 Nome=x.Nome,
                 ativoTipo=x.ativoTipo

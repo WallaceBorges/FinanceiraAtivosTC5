@@ -13,7 +13,7 @@ namespace AtivosTC5.Domain.Entities
         public int AtivoTipo_Id { get; set; }
         public string Sigla { get; set; }
 
-        public AtivoTipo? ativoTipo { get; set; }
+        public AtivoTipo ativoTipo { get; set; }
         public IList<PortfolioAtivo>? portfolioAtivos { get; set; }
         public IList<Transacao>? transacoes { get; set; }
     }

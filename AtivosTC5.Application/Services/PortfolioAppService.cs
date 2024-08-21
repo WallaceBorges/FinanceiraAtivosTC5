@@ -64,6 +64,7 @@ namespace AtivosTC5.Application.Services
                     Quantidade = y.Quantidade,
                     AtivoTipoNome = y.ativo.ativoTipo.Nome,
                     AtivoTipo_Id = y.ativo.ativoTipo.Id,
+                    ValorUnitario=y.Preco
                 }).ToList()
             }).ToList();
                 

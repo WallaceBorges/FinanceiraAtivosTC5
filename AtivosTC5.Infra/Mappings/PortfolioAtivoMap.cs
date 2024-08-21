@@ -24,7 +24,7 @@ namespace AtivosTC5.Infra.Data.Mappings
 
             builder.HasOne(x => x.ativo)
                 .WithMany(x => x.portfolioAtivos)
-                .HasPrincipalKey(x => x.Id);
+                .HasForeignKey(x => x.Ativo_Id);
             #endregion
 
             #region Colunas

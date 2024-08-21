@@ -9,5 +9,8 @@ namespace AtivosTC5.Domain.Interfaces.Repositories
 {
     public interface ITransacaoRepository : IRepositoryBase<Transacao>
     {
+        Task<IList<Transacao>> ListaTransacao(int idUsaurio);
+        Task<IList<Transacao>> ListaTransacaoPorData(DateTime dtTransacao, int idUser);
+        Task<IList<Transacao>> ListaTransacaoPortfolio(int idPort, int idUser);
     }
 }

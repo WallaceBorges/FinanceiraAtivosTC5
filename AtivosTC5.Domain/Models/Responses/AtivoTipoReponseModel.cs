@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace AtivosTC5.Domain.Models.Responses
 {
-    public class AtivoReponseModel
+    public class AtivoTipoReponseModel
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Sigla { get; set; }
-        public AtivoTipoReponseModel ativoTipo { get; set; }
 
     }
 }

@@ -29,7 +29,7 @@ namespace AtivosTC5.Application.Services
                     Id = a.Id,
                     Sigla = a.Sigla,
                     Nome = a.Nome,
-                    ativoTipo = a.ativoTipo
+                    ativoTipo = new AtivoTipoReponseModel {Id= a.ativoTipo.Id,Nome=a.ativoTipo.Nome }
 
                 }).ToList();
 

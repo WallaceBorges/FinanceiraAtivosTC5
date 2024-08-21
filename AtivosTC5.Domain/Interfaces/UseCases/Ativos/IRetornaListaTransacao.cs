@@ -1,4 +1,5 @@
 ﻿using AtivosTC5.Domain.Entities;
+using AtivosTC5.Domain.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace AtivosTC5.Domain.Interfaces.UseCases.Ativo
 {
     public interface IRetornaListaTransacao
     {
-        IList<Transacao> ListaTransacao(int idUsaurio);
-        IList<Transacao> ListaTransacaoPorData(int idUsaurio);
+        Task<IList<TransacaoReponseModel>> ListaTransacao(int idUsaurio);
+        Task<IList<TransacaoReponseModel>> ListaTransacaoPorData(DateTime data, int idUser);
+        Task<IList<TransacaoReponseModel>> ListaTransacaoPortfolio(int idPort,int idUser);
 
     }
 }

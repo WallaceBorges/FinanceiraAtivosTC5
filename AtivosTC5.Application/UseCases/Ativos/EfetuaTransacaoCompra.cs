@@ -67,7 +67,7 @@ namespace AtivosTC5.Application.UseCases.Ativos
             }
             catch (Exception)
             {
-
+                
                 throw;
             }
         }

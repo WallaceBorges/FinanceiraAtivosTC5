@@ -15,6 +15,9 @@ namespace AtivosTC5.Infra.Data.Repositories
         {
             var portfolio = await _context.Portifolio
                                        .Where(x => x.Usuario_Id == idUser)
+                                       .Include(p => p.portfolioAtivos)
+                                            .ThenInclude(a=>a.ativo)
+                                            .ThenInclude(t=>t.ativoTipo)
                                        .Select(x => new Portfolio
                                        {
                                            Id = x.Id,
