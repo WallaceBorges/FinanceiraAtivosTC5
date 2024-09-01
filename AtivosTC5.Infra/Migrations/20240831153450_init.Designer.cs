@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AtivosTC5.Infra.Data.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    [Migration("20240818151719_init")]
+    [Migration("20240831153450_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -357,6 +357,15 @@ namespace AtivosTC5.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("USUARIO", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "UserTeste@Teste.com",
+                            Nome = "UserTeste",
+                            Senha = "e501a9799a067184b96633716287a92626ef9c4c"
+                        });
                 });
 
             modelBuilder.Entity("AtivosTC5.Domain.ValueObjects.PortfolioAtivo", b =>
@@ -375,12 +384,9 @@ namespace AtivosTC5.Infra.Data.Migrations
                         .HasColumnType("decimal(20,3)")
                         .HasColumnName("QUANTIDADE");
 
-                    b.Property<int?>("ativoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Portfolio_Id", "Ativo_Id");
 
-                    b.HasIndex("ativoId");
+                    b.HasIndex("Ativo_Id");
 
                     b.ToTable("PORTFOLIOATIVO", (string)null);
                 });
@@ -428,15 +434,17 @@ namespace AtivosTC5.Infra.Data.Migrations
 
             modelBuilder.Entity("AtivosTC5.Domain.ValueObjects.PortfolioAtivo", b =>
                 {
+                    b.HasOne("AtivosTC5.Domain.Entities.Ativo", "ativo")
+                        .WithMany("portfolioAtivos")
+                        .HasForeignKey("Ativo_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("AtivosTC5.Domain.Entities.Portfolio", "portfolio")
                         .WithMany("portfolioAtivos")
                         .HasForeignKey("Portfolio_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("AtivosTC5.Domain.Entities.Ativo", "ativo")
-                        .WithMany("portfolioAtivos")
-                        .HasForeignKey("ativoId");
 
                     b.Navigation("ativo");
 

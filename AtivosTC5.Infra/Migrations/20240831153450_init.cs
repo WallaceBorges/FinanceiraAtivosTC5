@@ -90,17 +90,17 @@ namespace AtivosTC5.Infra.Data.Migrations
                     Portfolio_Id = table.Column<int>(type: "int", nullable: false),
                     Ativo_Id = table.Column<int>(type: "int", nullable: false),
                     QUANTIDADE = table.Column<decimal>(type: "decimal(20,3)", nullable: false),
-                    PRECO = table.Column<decimal>(type: "decimal(10,3)", nullable: false),
-                    ativoId = table.Column<int>(type: "int", nullable: true)
+                    PRECO = table.Column<decimal>(type: "decimal(10,3)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PORTFOLIOATIVO", x => new { x.Portfolio_Id, x.Ativo_Id });
                     table.ForeignKey(
-                        name: "FK_PORTFOLIOATIVO_ATIVO_ativoId",
-                        column: x => x.ativoId,
+                        name: "FK_PORTFOLIOATIVO_ATIVO_Ativo_Id",
+                        column: x => x.Ativo_Id,
                         principalTable: "ATIVO",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_PORTFOLIOATIVO_PORTFOLIO_Portfolio_Id",
                         column: x => x.Portfolio_Id,
@@ -151,6 +151,11 @@ namespace AtivosTC5.Infra.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "USUARIO",
+                columns: new[] { "Id", "email", "NOME", "Senha" },
+                values: new object[] { 1, "UserTeste@Teste.com", "UserTeste", "e501a9799a067184b96633716287a92626ef9c4c" });
+
+            migrationBuilder.InsertData(
                 table: "ATIVO",
                 columns: new[] { "Id", "AtivoTipo_Id", "NOME", "SIGLA" },
                 values: new object[,]
@@ -192,9 +197,9 @@ namespace AtivosTC5.Infra.Data.Migrations
                 column: "Usuario_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PORTFOLIOATIVO_ativoId",
+                name: "IX_PORTFOLIOATIVO_Ativo_Id",
                 table: "PORTFOLIOATIVO",
-                column: "ativoId");
+                column: "Ativo_Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TRANSACAO_Ativo_Id",

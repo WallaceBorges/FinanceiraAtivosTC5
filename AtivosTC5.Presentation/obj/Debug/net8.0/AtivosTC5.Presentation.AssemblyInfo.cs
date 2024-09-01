@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtivosTC5.Presentation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1fab850639697f516032306ede8768f576146fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc8b93c6ee281d35ebe28f69ac1f83c57971342d")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtivosTC5.Presentation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtivosTC5.Presentation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

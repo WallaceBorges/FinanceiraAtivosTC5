@@ -145,7 +145,14 @@ namespace AtivosTC5.Presentation.Controllers
 
                 var Lista = await _retornaListaTransacao.ListaTransacaoPortfolio(idPort, userId);
 
-                return Ok(Lista);
+                if (Lista.Count>0)
+                {
+                    return Ok(Lista);
+                }
+                else {
+                    return BadRequest("Nenhuma transação encontrada para o portfólio selecionado.");
+                }
+
             }
             catch (Exception ex)
             {

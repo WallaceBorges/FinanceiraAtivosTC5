@@ -34,6 +34,9 @@ namespace AtivosTC5.Infra.Data.Repositories
         {
             var portfolio = await _context.Portifolio
                                         .Where(x => x.Id == portfolioId)
+                                        .Include(x=>x.portfolioAtivos)
+                                            .ThenInclude(a => a.ativo)
+                                            .ThenInclude(t => t.ativoTipo)
                                         .Select(x => new Portfolio
                                         {
                                             Id=x.Id,

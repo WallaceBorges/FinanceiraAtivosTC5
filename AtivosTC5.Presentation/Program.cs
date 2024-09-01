@@ -35,3 +35,8 @@ app.MapControllers();
 app.UseCorsPolicy();
 app.Run();
 
+public partial class Program()
+{
+
+}
+

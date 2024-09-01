@@ -1,4 +1,5 @@
 ﻿using AtivosTC5.Domain.Entities;
+using AtivosTC5.Domain.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -32,6 +33,8 @@ namespace AtivosTC5.Infra.Data.Mappings
                 .HasColumnType("varchar(200)")
                 .IsRequired();
             #endregion
+
+            builder.HasData(new Usuario { Id = 1, Nome = "UserTeste", Email = "UserTeste@Teste.com", Senha= Sha1Helper.Encrypt("UserTeste") });
         }
     }
 }

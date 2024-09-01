@@ -20,7 +20,7 @@ namespace AtivosTC5.Presentation.Controllers
         }
 
         /// <summary>
-        /// Retorna um usuá por ID.
+        /// Lista de Ativos.
         /// </summary>
         [Authorize]
         [HttpGet("obter-lista-ativos")]

@@ -32,7 +32,7 @@ namespace AtivosTC5.Application.Services
                 Descricao = portfolio.Descricao,
                 Usuario_Id = portfolio.Usuario_Id,
                 Portifolio_Id = idPortfolio,
-                Ativos = portfolio.portfolioAtivos.Select(x => new AtivoPortfolioDTO {
+                Ativos = portfolio.portfolioAtivos?.Select(x => new AtivoPortfolioDTO {
                     Ativo_Id = x.Ativo_Id,
                     Sigla=x.ativo.Sigla,
                     Quantidade=x.Quantidade,
