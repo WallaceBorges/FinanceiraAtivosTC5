@@ -29,10 +29,10 @@ builder.Services.AddMvc();
 var app = builder.Build();
 
 app.UseSwaggerDoc();
+app.UseCorsPolicy();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-app.UseCorsPolicy();
 app.Run();
 
 public partial class Program()

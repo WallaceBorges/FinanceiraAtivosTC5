@@ -56,7 +56,7 @@ namespace AtivosTC5.Application.Services
                 Descricao = x.Descricao,
                 Nome = x.Nome,
                 Usuario_Id = x.Usuario_Id,
-                Portifolio_Id = idUser,
+                Portifolio_Id = x.Id,
                 Ativos = x.portfolioAtivos.Select(y => new AtivoPortfolioDTO
                 {
                     Ativo_Id = y.Ativo_Id,
